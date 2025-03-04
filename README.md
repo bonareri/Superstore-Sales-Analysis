@@ -61,10 +61,10 @@ These steps ensured that the date columns were correctly formatted for further a
 
 ---
 
-## 🏗 Data Modeling  
+## Data Modeling  
 To optimize performance and ensure an efficient **data model**, I structured the dataset into **Dimension Tables** and a **Fact Table**, following a **Star Schema approach**.  
 
-### 🔹 Dimension Tables Creation  
+### Dimension Tables Creation  
 Since the dataset is large and contains repeated categorical values, I extracted key **Dimension Tables**:  
 
 #### 1️⃣ **Region Dimension Table**
@@ -98,10 +98,12 @@ Once all **Dimension Tables** were created, I established **one-to-many relation
 ![image](https://github.com/user-attachments/assets/4cfa58f4-ba85-4055-a9de-90d1d4a71261)
 
 
-### 📅 Date Table  
+###  Date Table  
 Since I need to use **Time Intelligence functions** in Power BI, I created a **Date Table**.  
 - The **Order Date** is linked to the Fact Table through an **active relationship**.  
 - The **Ship Date** has an **inactive relationship**, which I can activate using the **USERRELATIONSHIP function** in DAX when needed.  
+
+<img width="497" alt="Time intelligence" src="https://github.com/user-attachments/assets/9b516f54-7cdc-4742-88a9-b51506e90699" />
 
 ---
 
