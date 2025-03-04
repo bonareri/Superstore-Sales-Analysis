@@ -15,7 +15,7 @@ The key business questions I aim to answer in this analysis are:
 
 ---
 
-## 📂 Data Overview  
+## Data Overview  
 My dataset consists of a **single CSV file** with **9,994 rows** and **21 columns**, including:  
 - **Order Details** – Order ID, Order Date, Ship Date, Order Priority  
 - **Customer Details** – Customer ID, Customer Name, Segment  
@@ -31,14 +31,33 @@ I started with importing the data into power query.
 
 <img width="661" alt="importing_data" src="https://github.com/user-attachments/assets/1b8c6c38-849d-45ec-99d9-dd37e1757c8b" />
 
-## 🧹 Data Cleaning Process  
-Before performing the analysis, I cleaned the dataset in **Power Query** by:  
-✅ Checking for **incorrect spellings**  
-✅ Ensuring **each column has the correct data type**  
-✅ Identifying and **removing duplicate records**  
-✅ Handling **missing or blank values**  
+### Data Cleaning Steps in Power Query
 
-To **profile the data**, I enabled **Column Profile and Column Quality** under the ‘View’ tab in Power Query. This allowed me to visualize the data quality, ensuring **100% validity, 0% errors, and 0% empty values** before proceeding.  
+#### 1. Removed Unnecessary Columns  
+Some columns were removed to keep only relevant data for analysis:  
+- **Row ID** – Sequential numbering not needed for analysis.  
+- **Postal Code** – Removed if regional analysis is not required.  
+- **Product Name** – Dropped if not necessary for aggregated sales analysis.  
+
+#### 2. Cleaned Order Date & Ship Date Columns  
+##### Splitting and Reformatting Dates  
+- **Split the Date Columns**:  
+  - Separated *Order Date* and *Ship Date* into three columns: Year, Month, and Day using "/" as the delimiter.  
+
+- **Converted to Date Format**:  
+  - Recombined the split columns using `#date()` function:  
+
+    ```powerquery
+    #date(
+      Number.FromText([Order Date - Copy.3]), 
+      Number.FromText([Order Date - Copy.1]), 
+      Number.FromText([Order Date - Copy.2])
+    )
+    ```
+
+  - Applied the same transformation to *Ship Date*.
+
+These steps ensured that the date columns were correctly formatted for further analysis.
 
 ---
 
