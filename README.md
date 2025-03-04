@@ -3,10 +3,21 @@
 ## Project Overview  
 This project focuses on analyzing sales data from a fictional Superstore using **Microsoft SQL Server Management Studio (SSMS)** for data management and **Power BI** for visualization. The goal is to extract insights into sales trends, customer behavior, and product performance.  
 
+## Data Source  
+The dataset used for this project is the **Superstore Sales Dataset**, commonly used for retail analytics. It contains transactional sales data, including details on orders, customers, products, shipping, and financial performance.  
+
+### Dataset Features  
+The dataset includes the following key attributes:  
+
+- **Order Details**: Order ID, Order Date, Ship Date, Ship Mode  
+- **Customer Information**: Customer ID, Name, Segment, Location (City, State, Country, Postal Code)  
+- **Product Information**: Product ID, Name, Category, Sub-Category  
+- **Sales & Financials**: Sales Revenue, Discount, Profit  
+- **Shipping Data**: Ship Mode, Delivery Performance  
+
 ## Technologies Used  
-- **Microsoft SQL Server Management Studio (SSMS)** – For database management and SQL queries  
+- **Microsoft SQL Server Management Studio (SSMS)** – For data transformation and analysis   
 - **Power BI** – For creating interactive visualizations and reports  
-- **SQL** – For data transformation and analysis  
 
 ## Data Processing Steps  
 
