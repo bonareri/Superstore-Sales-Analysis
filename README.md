@@ -61,6 +61,8 @@ These steps ensured that the date columns were correctly formatted for further a
 
 ---
 
+## Exploratory Data Analysis (EDA)
+
 ## Data Modeling  
 To optimize performance and ensure an efficient **data model**, I structured the dataset into **Dimension Tables** and a **Fact Table**, following a **Star Schema approach**.  
 
