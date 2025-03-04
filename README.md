@@ -67,13 +67,17 @@ To optimize performance and ensure an efficient **data model**, I structured the
 ### 🔹 Dimension Tables Creation  
 Since the dataset is large and contains repeated categorical values, I extracted key **Dimension Tables**:  
 
-#### 1️⃣ **Region Dimension Table**  
+#### 1️⃣ **Region Dimension Table**
+
 - **Steps:**  
   1. Duplicated the **Superstore Table** and renamed it to **Region**.  
   2. Selected the **Region column** and removed all other columns.  
   3. Removed duplicates to get a unique list of regions.  
   4. Added an **Index Column** (starting from 1) and renamed it to **Region_ID**.  
-  5. Merged this table with the **Superstore Fact Table**, replacing the Region column with **Region_ID** to reduce redundancy.  
+  5. Merged this table with the **Superstore Fact Table**, replacing the Region column with **Region_ID** to reduce redundancy.
+ 
+  <img width="526" alt="merging_data" src="https://github.com/user-attachments/assets/a9419331-3875-465b-a7f4-4be870d81126" />
+
 
 #### 2️⃣ **Other Dimension Tables** (Created using similar steps)  
 - **Customers Dimension Table**  
@@ -90,6 +94,9 @@ Since the dataset is large and contains repeated categorical values, I extracted
 
 ## 🔗 Star Schema Model  
 Once all **Dimension Tables** were created, I established **one-to-many relationships** between them and the **Fact Table**, creating a **Star Schema Model** for efficient querying.  
+
+![image](https://github.com/user-attachments/assets/4cfa58f4-ba85-4055-a9de-90d1d4a71261)
+
 
 ### 📅 Date Table  
 Since I need to use **Time Intelligence functions** in Power BI, I created a **Date Table**.  
