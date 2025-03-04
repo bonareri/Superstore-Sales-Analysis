@@ -1,67 +1,97 @@
-# Superstore Sales Analysis  
+# 📊 Superstore Sales Analysis  
 
-## Project Overview  
-This project focuses on analyzing sales data from a fictional Superstore using **Microsoft SQL Server Management Studio (SSMS)** for data management and **Power BI** for visualization. The goal is to extract insights into sales trends, customer behavior, and product performance.  
+## 📌 Introduction  
+Sales analysis helps businesses improve their sales process, achieve sales goals, support operational decision-making, and boost team performance. A sales analysis report includes key metrics such as total revenue, cost of goods sold (COGS), profit, and other performance indicators depending on the industry.  
 
-## Data Source  
-The dataset used for this project is the **Superstore Sales Dataset**, commonly used for retail analytics. It contains transactional sales data, including details on orders, customers, products, shipping, and financial performance.  
+For this project, I am analyzing the **Superstore Sales dataset** from **Kaggle**. I am using **Power Query and Power BI** to clean, transform, and analyze the data, ensuring my report remains **dynamic and insightful**.  
 
-### Dataset Features  
-The dataset includes the following key attributes:  
-
-- **Order Details**: Order ID, Order Date, Ship Date, Ship Mode  
-- **Customer Information**: Customer ID, Name, Segment, Location (City, State, Country, Postal Code)  
-- **Product Information**: Product ID, Name, Category, Sub-Category  
-- **Sales & Financials**: Sales Revenue, Discount, Profit  
-- **Shipping Data**: Ship Mode, Delivery Performance  
-
-## Technologies Used  
-- **Microsoft SQL Server Management Studio (SSMS)** – For data transformation and analysis   
-- **Power BI** – For creating interactive visualizations and reports  
-
-## Data Processing Steps  
-
-1. **Database Setup**  
-   - Created the `SuperstoreDB` database in SQL Server  
-   - Imported the raw Superstore dataset as a table  
-   - Created normalized tables: `Customers`, `Orders`, `Shipping`, `Products`, and `OrderDetails`  
-
-2. **Data Transformation & Cleaning**  
-   - Renamed columns for consistency  
-   - Removed duplicates and NULL values  
-   - Ensured referential integrity using foreign keys  
-
-3. **Data Analysis Using SQL**  
-   - Identified top-performing products and categories  
-   - Analyzed regional sales trends  
-   - Evaluated customer segments and purchase patterns  
-   - Measured shipping performance  
-
-4. **Visualization with Power BI**  
-   - Connected Power BI to SQL Server using **Import Mode**  
-   - Created dashboards for:  
-     - **Sales Performance**: Total sales, top-selling products, and revenue trends  
-     - **Customer Insights**: Customer segmentation and purchasing behavior  
-     - **Regional Sales**: Geographic distribution of sales  
-     - **Order & Shipping Analysis**: Order trends, shipping efficiency, and delivery times  
-
-## Key Insights  
-- **Top-selling categories** and products contribute significantly to revenue.  
-- **Customer segmentation** helps in understanding high-value customers.  
-- **Regional trends** reveal sales concentration in specific locations.  
-- **Shipping delays** impact customer satisfaction.  
-
-## Future Improvements  
-- Automate data updates with scheduled SQL scripts  
-- Enhance Power BI reports with advanced DAX calculations  
-- Implement machine learning for sales forecasting  
-
-## How to Use  
-1. Clone the repository (if applicable).  
-2. Restore the `SuperstoreDB` in SQL Server.  
-3. Open Power BI and connect to the database.  
-4. Explore the dashboards for insights.  
+## 🏢 Business Problem  
+The key business questions I aim to answer in this analysis are:  
+1. **What is the total sales, quantity sold, and total profit?**  
+2. **Which region is generating the highest sales?**  
+3. **In which category do we see the highest number of sales?**  
+4. **Which ship mode is most frequently used by customers?**  
+5. **Who are the top 10 customers based on sales?**  
 
 ---
 
-### Author: Melody Bonareri  
+## 📂 Data Overview  
+My dataset consists of a **single CSV file** with **9,994 rows** and **21 columns**, including:  
+- **Order Details** – Order ID, Order Date, Ship Date, Order Priority  
+- **Customer Details** – Customer ID, Customer Name, Segment  
+- **Location Details** – City, State, Country, Region  
+- **Product Details** – Product ID, Category, Sub-Category, Product Name  
+- **Sales Information** – Sales, Quantity, Discount, Profit  
+- **Shipping Information** – Ship Mode  
+
+---
+
+## 🧹 Data Cleaning Process  
+Before performing the analysis, I cleaned the dataset in **Power Query** by:  
+✅ Checking for **incorrect spellings**  
+✅ Ensuring **each column has the correct data type**  
+✅ Identifying and **removing duplicate records**  
+✅ Handling **missing or blank values**  
+
+To **profile the data**, I enabled **Column Profile and Column Quality** under the ‘View’ tab in Power Query. This allowed me to visualize the data quality, ensuring **100% validity, 0% errors, and 0% empty values** before proceeding.  
+
+---
+
+## 🏗 Data Modeling  
+To optimize performance and ensure an efficient **data model**, I structured the dataset into **Dimension Tables** and a **Fact Table**, following a **Star Schema approach**.  
+
+### 🔹 Dimension Tables Creation  
+Since the dataset is large and contains repeated categorical values, I extracted key **Dimension Tables**:  
+
+#### 1️⃣ **Region Dimension Table**  
+- **Steps:**  
+  1. Duplicated the **Superstore Table** and renamed it to **Region**.  
+  2. Selected the **Region column** and removed all other columns.  
+  3. Removed duplicates to get a unique list of regions.  
+  4. Added an **Index Column** (starting from 1) and renamed it to **Region_ID**.  
+  5. Merged this table with the **Superstore Fact Table**, replacing the Region column with **Region_ID** to reduce redundancy.  
+
+#### 2️⃣ **Other Dimension Tables** (Created using similar steps)  
+- **Customers Dimension Table**  
+- **Category Dimension Table**  
+- **Sub-Category Dimension Table**  
+- **Ship Mode Dimension Table**  
+- **State Dimension Table**  
+- **Segment Dimension Table**  
+
+### 🔹 Fact Table  
+- The **Superstore Table** serves as the **Fact Table**, containing transactional data such as **Order ID, Sales, Profit, Quantity, Discount**, and foreign keys linking to the Dimension Tables.  
+
+---
+
+## 🔗 Star Schema Model  
+Once all **Dimension Tables** were created, I established **one-to-many relationships** between them and the **Fact Table**, creating a **Star Schema Model** for efficient querying.  
+
+### 📅 Date Table  
+Since I need to use **Time Intelligence functions** in Power BI, I created a **Date Table**.  
+- The **Order Date** is linked to the Fact Table through an **active relationship**.  
+- The **Ship Date** has an **inactive relationship**, which I can activate using the **USERRELATIONSHIP function** in DAX when needed.  
+
+---
+
+## 📈 Insights and Reporting  
+With a **cleaned and structured data model**, I am now able to:  
+✅ Calculate **total sales, total quantity sold, and total profit**.  
+✅ Identify **which region generates the highest sales**.  
+✅ Determine **the category with the highest number of sales**.  
+✅ Analyze **the most frequently used ship mode**.  
+✅ Identify **the top 10 customers based on total sales**.  
+
+I will build **interactive Power BI reports and dashboards** to visualize these insights and support business decision-making. 🚀  
+
+---
+
+## 🎯 Conclusion  
+By following this **structured approach**, I ensure that the analysis is **accurate, efficient, and valuable** for deriving business insights. **This project enhances my data modeling, data transformation, and visualization skills using Power BI.**  
+
+🔹 **Next Steps:**  
+- Implement **DAX measures** for deeper analysis.  
+- Create **dynamic dashboards** to showcase insights effectively.  
+- Explore **predictive modeling** for future sales trends.  
+
+🚀 **This project demonstrates my ability to transform raw data into meaningful business insights!**  
