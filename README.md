@@ -1,17 +1,17 @@
-# 📊 Superstore Sales Analysis  
+# Superstore Sales Analysis  
 
-## 📌 Introduction  
+## Introduction  
 Sales analysis helps businesses improve their sales process, achieve sales goals, support operational decision-making, and boost team performance. A sales analysis report includes key metrics such as total revenue, cost of goods sold (COGS), profit, and other performance indicators depending on the industry.  
 
 For this project, I am analyzing the **Superstore Sales dataset** from **Kaggle**. I am using **Power Query and Power BI** to clean, transform, and analyze the data, ensuring my report remains **dynamic and insightful**.  
 
-## 🏢 Business Problem  
+## Business Problem  
 The key business questions I aim to answer in this analysis are:  
-1. **What is the total sales, quantity sold, and total profit?**  
-2. **Which region is generating the highest sales?**  
-3. **In which category do we see the highest number of sales?**  
-4. **Which ship mode is most frequently used by customers?**  
-5. **Who are the top 10 customers based on sales?**  
+1. What is the total sales, quantity sold, and total profit? 
+2. Which region is generating the highest sales?
+3. In which category do we see the highest number of sales?  
+4. Which ship mode is most frequently used by customers? 
+5. Who are the top 10 customers based on sales?
 
 ---
 
@@ -25,6 +25,11 @@ My dataset consists of a **single CSV file** with **9,994 rows** and **21 column
 - **Shipping Information** – Ship Mode  
 
 ---
+## Analysis Overview
+
+I started with importing the data into power query.
+
+<img width="661" alt="importing_data" src="https://github.com/user-attachments/assets/1b8c6c38-849d-45ec-99d9-dd37e1757c8b" />
 
 ## 🧹 Data Cleaning Process  
 Before performing the analysis, I cleaned the dataset in **Power Query** by:  
