@@ -87,7 +87,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    GROUP BY C.Customer_Name
    ORDER BY Total_Sales DESC;
    
-   ![image](https://github.com/user-attachments/assets/6c57ecf3-360b-492c-a703-0cbb67612d9a)
+![image](https://github.com/user-attachments/assets/6c57ecf3-360b-492c-a703-0cbb67612d9a)
 
 3. **Best-Selling Products**
    ```sql
@@ -99,7 +99,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    GROUP BY P.Product_Name
    ORDER BY Total_Quantity_Sold DESC;
 
-   ![image](https://github.com/user-attachments/assets/e1b865f8-1e7f-4466-943a-cceb717a8f2c)
+![image](https://github.com/user-attachments/assets/e1b865f8-1e7f-4466-943a-cceb717a8f2c)
 
 4. **Most Profitable Product Categories**
    ```sql
@@ -111,7 +111,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    GROUP BY P.Category
    ORDER BY Total_Profit DESC;
 
-   ![image](https://github.com/user-attachments/assets/b67fd5da-4671-4602-9945-e18824783425)
+![image](https://github.com/user-attachments/assets/b67fd5da-4671-4602-9945-e18824783425)
 
 5. **Monthly Sales Trend**
    ```sql
@@ -124,7 +124,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    GROUP BY YEAR(O.Order_Date), MONTH(O.Order_Date)
    ORDER BY Year, Month;
 
-   ![image](https://github.com/user-attachments/assets/76e65744-1aa1-46ad-be06-9f98debaa3bb)
+![image](https://github.com/user-attachments/assets/76e65744-1aa1-46ad-be06-9f98debaa3bb)
 
 
 
