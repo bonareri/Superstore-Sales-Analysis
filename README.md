@@ -87,8 +87,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    GROUP BY C.Customer_Name
    ORDER BY Total_Sales DESC;
    ``
-
-   ![image](https://github.com/user-attachments/assets/6c57ecf3-360b-492c-a703-0cbb67612d9a)
+![image](https://github.com/user-attachments/assets/6c57ecf3-360b-492c-a703-0cbb67612d9a)
 
 ## Analysis Overview
 
