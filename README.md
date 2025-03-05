@@ -190,7 +190,7 @@ With this model, I was able to create **efficient DAX calculations and visualiza
 
 ## visualization and dashboard design.
 
-![image](https://github.com/user-attachments/assets/ceda4fc8-f13e-4c4c-9f14-c652ededa867)
+![image](https://github.com/user-attachments/assets/44206177-2825-4041-bec1-e6dcea5b867c)
 
 ### Superstore Sales Report  
 
@@ -202,6 +202,8 @@ The report provides a detailed analysis of sales, profit, quantity sold, and cus
 - Sales and profit show seasonal trends, peaking in November and December.
 - Technology leads in sales, followed by Furniture and Office Supplies.   
 - Top Performing Sub-Categories are Phones & Chairs
+- Standard Class dominates, handling $1.36M in sales.
+- Same Day shipping generates the least sales.
 - Top 10 customers contribute significantly to total revenue, with **Todd Sumrall leading**.
 - The Consumer Segment emerges as Superstore’s largest, while Home Office represents the smallest segment. 
  
@@ -214,8 +216,6 @@ The report provides a detailed analysis of sales, profit, quantity sold, and cus
 By following this **structured approach**, I ensure that the analysis is **accurate, efficient, and valuable** for deriving business insights. **This project enhances my data modeling, data transformation, and visualization skills using Power BI.**  
 
 🔹 **Next Steps:**  
-- Implement **DAX measures** for deeper analysis.  
-- Create **dynamic dashboards** to showcase insights effectively.  
-- Explore **predictive modeling** for future sales trends.  
+ - Explore **predictive modeling** for future sales trends.  
 
 🚀 **This project demonstrates my ability to transform raw data into meaningful business insights!**  
