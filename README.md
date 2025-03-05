@@ -204,7 +204,7 @@ The report provides a detailed analysis of sales, profit, quantity sold, and cus
 - Top Performing Sub-Categories are Phones & Chairs
 - Standard Class dominates, handling $1.36M in sales.
 - Same Day shipping generates the least sales.
-- Top 10 customers contribute significantly to total revenue, with **Todd Sumrall leading**.
+- Top 10 customers contribute significantly to total revenue, with **Sean Miller** leading.
 - The Consumer Segment emerges as Superstore’s largest, while Home Office represents the smallest segment. 
  
 ![image](https://github.com/user-attachments/assets/bdde2cc5-a7a2-4f10-8b2e-46a384d295ce)
