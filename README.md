@@ -101,6 +101,18 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
 
 ![image](https://github.com/user-attachments/assets/e1b865f8-1e7f-4466-943a-cceb717a8f2c)
 
+4. **Most Profitable Product Categories**
+   ```sql
+   SELECT 
+    P.Category, 
+    SUM(OD.Profit) AS Total_Profit
+   FROM OrderDetails OD
+   JOIN Products P ON OD.Product_ID = P.Product_ID
+   GROUP BY P.Category
+   ORDER BY Total_Profit DESC;
+
+![image](https://github.com/user-attachments/assets/b67fd5da-4671-4602-9945-e18824783425)
+
 
 ## Analysis Overview
 
