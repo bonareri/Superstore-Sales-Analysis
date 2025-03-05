@@ -89,6 +89,19 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    ``
 ![image](https://github.com/user-attachments/assets/6c57ecf3-360b-492c-a703-0cbb67612d9a)
 
+3. **Best-Selling Products**
+   ```sql
+   SELECT TOP 10 
+    P.Product_Name, 
+    SUM(OD.Quantity) AS Total_Quantity_Sold
+   FROM OrderDetails OD
+   JOIN Products P ON OD.Product_ID = P.Product_ID
+   GROUP BY P.Product_Name
+   ORDER BY Total_Quantity_Sold DESC;
+
+![image](https://github.com/user-attachments/assets/e1b865f8-1e7f-4466-943a-cceb717a8f2c)
+
+
 ## Analysis Overview
 
 I started with importing the data into power query.
