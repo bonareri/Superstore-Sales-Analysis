@@ -53,8 +53,9 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    FROM Customers  
    GROUP BY Customer_ID  
    HAVING COUNT(*) > 1;
-  ```
-  
+  ``
+  ![image](https://github.com/user-attachments/assets/528a2340-0758-446e-b118-5e35384d5b98)
+
 ## Analysis Overview
 
 I started with importing the data into power query.
