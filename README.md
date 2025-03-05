@@ -56,6 +56,15 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
   ``
   ![image](https://github.com/user-attachments/assets/528a2340-0758-446e-b118-5e35384d5b98)
 
+2. **Removing duplicate records using CTE**
+   ```sql
+   WITH CTE AS (
+    SELECT *, ROW_NUMBER() OVER (PARTITION BY Customer_ID ORDER BY Customer_Name) AS rn
+    FROM SuperStore
+)
+DELETE FROM CTE WHERE rn > 1;
+``
+
 ## Analysis Overview
 
 I started with importing the data into power query.
