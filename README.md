@@ -126,7 +126,17 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
 
 ![image](https://github.com/user-attachments/assets/76e65744-1aa1-46ad-be06-9f98debaa3bb)
 
+6. **Region-Wise Sales Performance**
+   ```sql
+   SELECT 
+    O.Region, 
+    SUM(OD.Sales) AS Total_Sales
+   FROM Orders O
+   JOIN OrderDetails OD ON O.Order_ID = OD.Order_ID
+   GROUP BY O.Region
+   ORDER BY Total_Sales DESC;
 
+![image](https://github.com/user-attachments/assets/5f330117-ff81-4634-a2aa-2606e376dfef)
 
 ## Analysis Overview
 
