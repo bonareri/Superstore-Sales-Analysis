@@ -74,7 +74,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    GROUP BY YEAR(Order_Date)
    ORDER BY Year;
    
-   ![image](https://github.com/user-attachments/assets/6e150f94-0706-4046-81ad-6c588be12f89)
+![image](https://github.com/user-attachments/assets/6e150f94-0706-4046-81ad-6c588be12f89)
 
 2. **Top 10 Customers by Total Sales**
    ```sql
