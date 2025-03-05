@@ -190,21 +190,24 @@ With this model, I was able to create **efficient DAX calculations and visualiza
 
 ## visualization and dashboard design.
 
-![image](https://github.com/user-attachments/assets/745df7bc-792a-4437-9cca-b2bc0da3a1d1)
+![image](https://github.com/user-attachments/assets/ceda4fc8-f13e-4c4c-9f14-c652ededa867)
+
+### Superstore Sales Report  
+
+The report provides a detailed analysis of sales, profit, quantity sold, and customer behavior. 
+
+**Key insights include:**
+
+- Total sales amount to **$2M**, with a profit of **$287K** and **38K** units sold.
+- Sales and profit show seasonal trends, peaking in November and December.
+- Technology leads in sales, followed by Furniture and Office Supplies.   
+- Top Performing Sub-Categories are Phones & Chairs
+- Top 10 customers contribute significantly to total revenue, with **Todd Sumrall leading**.
+- The Consumer Segment emerges as Superstore’s largest, while Home Office represents the smallest segment. 
  
+![image](https://github.com/user-attachments/assets/bdde2cc5-a7a2-4f10-8b2e-46a384d295ce)
 
----
-
-## 📈 Insights and Reporting  
-With a **cleaned and structured data model**, I am now able to:  
-✅ Calculate **total sales, total quantity sold, and total profit**.  
-✅ Identify **which region generates the highest sales**.  
-✅ Determine **the category with the highest number of sales**.  
-✅ Analyze **the most frequently used ship mode**.  
-✅ Identify **the top 10 customers based on total sales**.  
-
-I will build **interactive Power BI reports and dashboards** to visualize these insights and support business decision-making. 🚀  
-
+- Utilizing the Region Slicer, it is evident that the West region contributes the highest sales, amounting to $725.46. Further exploration through the Monthly Sales Table allows us to analyze yearly, quarterly, and weekly sales. 
 ---
 
 ## 🎯 Conclusion  
