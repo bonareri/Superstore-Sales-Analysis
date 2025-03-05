@@ -61,9 +61,21 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    WITH CTE AS (
     SELECT *, ROW_NUMBER() OVER (PARTITION BY Customer_ID ORDER BY Customer_Name) AS rn
     FROM SuperStore
-)
-DELETE FROM CTE WHERE rn > 1;
-``
+    )
+    DELETE FROM CTE WHERE rn > 1;
+   ``
+### Data Exploration
+
+1. **Total Sales per Year**
+   ```sql
+   SELECT YEAR(Order_Date) AS Year, SUM(Sales) AS TotalSales
+   FROM Orders o
+   JOIN OrderDetails od ON o.Order_ID = od.Order_ID
+   GROUP BY YEAR(Order_Date)
+   ORDER BY Year;
+   ``
+   
+
 
 ## Analysis Overview
 
