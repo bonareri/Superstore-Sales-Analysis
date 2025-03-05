@@ -1,9 +1,7 @@
 # Superstore Sales Analysis  
 
 ## Introduction  
-Sales analysis helps businesses improve their sales process, achieve sales goals, support operational decision-making, and boost team performance. A sales analysis report includes key metrics such as total revenue, cost of goods sold (COGS), profit, and other performance indicators depending on the industry.  
-
-For this project, I am analyzing the **Superstore Sales dataset** from **Kaggle**. I am using **Power Query and Power BI** to clean, transform, and analyze the data, ensuring my report remains **dynamic and insightful**.  
+This project involves analyzing the Superstore sales dataset to gain insights into customer behavior, product performance, and overall sales trends. The data was stored and normalized using Microsoft SQL Server Management Studio (SSMS) before being analyzed in Power BI for visualization.
 
 ## Business Problem  
 The key business questions I aim to answer in this analysis are:  
@@ -16,7 +14,9 @@ The key business questions I aim to answer in this analysis are:
 ---
 
 ## Data Overview  
-My dataset consists of a **single CSV file** with **9,994 rows** and **21 columns**, including:  
+The dataset was sourced from **Kaggle** and consists of  **9,994 rows** and **21 columns**
+It includes sales transactions from **2014 to 2017**, covering the following:
+- **Orders**: Order details including order date, customer ID, and region.
 - **Order Details** – Order ID, Order Date, Ship Date, Order Priority  
 - **Customer Details** – Customer ID, Customer Name, Segment  
 - **Location Details** – City, State, Country, Region  
@@ -25,6 +25,36 @@ My dataset consists of a **single CSV file** with **9,994 rows** and **21 column
 - **Shipping Information** – Ship Mode  
 
 ---
+
+## Data Preparation & Normalization
+The dataset originally contained **denormalized** sales records. To ensure **data integrity, minimize redundancy, and improve query efficiency**, I **normalized** the data using **Microsoft SQL Server Management Studio (SSMS)**. The process involved:
+
+1. **Breaking down large tables** into smaller, related tables using **primary and foreign keys**.
+2. **Removing redundant data** by organizing attributes into separate entities.
+3. **Ensuring referential integrity** by defining appropriate relationships.
+
+### Tables Created:
+After normalization, the following tables were created:
+
+- **Customers** (`Customer_ID`, `Customer_Name`, `Segment`, `Country`, `City`, `State`, `Postal_Code`)
+- **Orders** (`Order_ID`, `Order_Date`, `Customer_ID`, `Region`)
+- **Products** (`Product_ID`, `Product_Name`, `Category`, `SubCategory`)
+- **Shipping** (`Ship_ID`, `Order_ID`, `Ship_Mode`, `Ship_Date`)
+- **OrderDetails** (`OrderDetail_ID`, `Order_ID`, `Product_ID`, `Quantity`, `Sales`, `Discount`, `Profit`)
+
+These tables were then **populated with data**, ensuring consistency in keys and relationships.
+
+## Data Exploration in SQL
+After normalizing and inserting the data, I conducted **exploratory data analysis (EDA) in SQL** using **SSMS**. Some of the key queries performed:
+
+1. **Checking for duplicates:**
+   ```sql
+   SELECT Customer_ID, COUNT(*)  
+   FROM Customers  
+   GROUP BY Customer_ID  
+   HAVING COUNT(*) > 1;
+  ```
+  
 ## Analysis Overview
 
 I started with importing the data into power query.
