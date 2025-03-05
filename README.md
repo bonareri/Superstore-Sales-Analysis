@@ -53,7 +53,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    FROM Customers  
    GROUP BY Customer_ID  
    HAVING COUNT(*) > 1;
-  ``
+   
   ![image](https://github.com/user-attachments/assets/528a2340-0758-446e-b118-5e35384d5b98)
 
 2. **Removing duplicate records using CTE**
@@ -63,7 +63,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
     FROM SuperStore
     )
     DELETE FROM CTE WHERE rn > 1;
-   ``
+   
 ### Data Exploration
 
 1. **Total Sales per Year**
@@ -73,8 +73,8 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    JOIN OrderDetails od ON o.Order_ID = od.Order_ID
    GROUP BY YEAR(Order_Date)
    ORDER BY Year;
-   ``
-![image](https://github.com/user-attachments/assets/6e150f94-0706-4046-81ad-6c588be12f89)
+   
+   ![image](https://github.com/user-attachments/assets/6e150f94-0706-4046-81ad-6c588be12f89)
 
 2. **Top 10 Customers by Total Sales**
    ```sql
@@ -86,8 +86,8 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    JOIN Customers C ON O.Customer_ID = C.Customer_ID
    GROUP BY C.Customer_Name
    ORDER BY Total_Sales DESC;
-   ``
-![image](https://github.com/user-attachments/assets/6c57ecf3-360b-492c-a703-0cbb67612d9a)
+   
+   ![image](https://github.com/user-attachments/assets/6c57ecf3-360b-492c-a703-0cbb67612d9a)
 
 3. **Best-Selling Products**
    ```sql
@@ -99,7 +99,7 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    GROUP BY P.Product_Name
    ORDER BY Total_Quantity_Sold DESC;
 
-![image](https://github.com/user-attachments/assets/e1b865f8-1e7f-4466-943a-cceb717a8f2c)
+   ![image](https://github.com/user-attachments/assets/e1b865f8-1e7f-4466-943a-cceb717a8f2c)
 
 4. **Most Profitable Product Categories**
    ```sql
@@ -111,7 +111,21 @@ After normalizing and inserting the data, I conducted **exploratory data analysi
    GROUP BY P.Category
    ORDER BY Total_Profit DESC;
 
-![image](https://github.com/user-attachments/assets/b67fd5da-4671-4602-9945-e18824783425)
+   ![image](https://github.com/user-attachments/assets/b67fd5da-4671-4602-9945-e18824783425)
+
+5. **Monthly Sales Trend**
+   ```sql
+   SELECT 
+    YEAR(O.Order_Date) AS Year, 
+    MONTH(O.Order_Date) AS Month, 
+    SUM(OD.Sales) AS Total_Sales
+   FROM OrderDetails OD
+   JOIN Orders O ON OD.Order_ID = O.Order_ID
+   GROUP BY YEAR(O.Order_Date), MONTH(O.Order_Date)
+   ORDER BY Year, Month;
+
+   ![image](https://github.com/user-attachments/assets/76e65744-1aa1-46ad-be06-9f98debaa3bb)
+
 
 
 ## Analysis Overview
